@@ -18,6 +18,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## On this project
+
+The files are structured as follows:
+- Pages for the forms are `page`, `contact`, `purpose` within `src/app`.
+- Tests using `Jest` framework can be run using `npm run test`.
+- Tests are store in `tests` folder.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

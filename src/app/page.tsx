@@ -10,15 +10,15 @@ export default function Home() {
       <form className='flex flex-col w-full px-4 items-stretch lg:max-w-xl' action="/contact" method="get">
         <div className='mb-6'>
           <label htmlFor="first">First name</label>
-          <input required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ' type="text" id="first" name="first" />
+          <input data-testid="first" required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ' type="text" id="first" name="first" />
         </div>
         <div className='mb-6'>
           <label htmlFor="last">Last name</label>
-          <input required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ' type="text" id="last" name="last" />
+          <input data-testid="last" required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ' type="text" id="last" name="last" />
         </div>
         <div className='mb-6'>
           <label htmlFor="idno">ID number</label>
-          <input required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ' type="text" id="idno" name="idno" />
+          <input data-testid="idno" required className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ' type="text" id="idno" name="idno" />
         </div>
         <button className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5' type="submit">Next</button>
       </form>
