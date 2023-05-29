@@ -87,6 +87,7 @@ export default function Home() {
         }
         { steps < 3 && (
             <button
+              data-testid="submit-button"
               className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 disabled:bg-slate-300'
               type='button'
               onClick={() => steps < 3 ? setSteps(s => s+1) : 'complete'}
