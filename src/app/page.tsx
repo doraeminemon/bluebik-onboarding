@@ -12,6 +12,11 @@ export default function Home() {
   const [purpose, setPurpose] = useState<string[]>([])
   const checkList = ["Money transfer", "Payment", "Bill payment", "Loan", "Investment", "Saving"];
 
+  const enabledFirstStep = steps === 0 && first.length > 0 && last.length > 0 && idno.length > 0
+  const enabledSecondStep = steps === 1 && email.length > 0 && phoneNumber.length > 0 && dob.length > 0
+  const enabledThirdStep = steps === 2 && purpose.length > 0
+  const buttonIsDisabled = !enabledFirstStep && !enabledSecondStep && !enabledThirdStep
+
   // Add/Remove checked item from list
   const handleCheck = (event: { target: { checked: boolean; value: string } }) => {
     var updatedList = [...purpose];
@@ -82,9 +87,10 @@ export default function Home() {
         }
         { steps < 3 && (
             <button
-              className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5'
+              className='text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 disabled:bg-slate-300'
               type='button'
               onClick={() => steps < 3 ? setSteps(s => s+1) : 'complete'}
+              disabled={buttonIsDisabled}
             >
               { steps < 3 ? 'Next' : 'Complete' }
             </button>
