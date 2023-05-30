@@ -24,6 +24,11 @@ The files are structured as follows:
 - Pages for the forms are `page`, `contact`, `purpose` within `src/app`.
 - Tests using `Jest` framework can be run using `npm run test`.
 - Tests are store in `tests` folder.
+- Test site are on `https://bluebik-onboarding.vercel.app/`
+- Dev run using `npm run dev`
+- The main component can be found on `src/app/page.tsx`
+- Different page of the form can be switch easily by switching the `steps` condition
+- The whole component is responsive and can be testable on mobile or desktop size
 
 ## Learn More
 
