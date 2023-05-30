@@ -3,15 +3,19 @@ import { useState } from "react"
 
 export default function Home() {
   const [steps, setSteps] = useState(0)
+  // first page
   const [first, setFirst] = useState('')
   const [last, setLast] = useState('')
   const [idno, setIdno] = useState('')
+  // second page
   const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [dob, setDoB] = useState('')
-  const [purpose, setPurpose] = useState<string[]>([])
+  // third page
   const checkList = ["Money transfer", "Payment", "Bill payment", "Loan", "Investment", "Saving"];
+  const [purpose, setPurpose] = useState<string[]>([])
 
+  // validation
   const enabledFirstStep = steps === 0 && first.length > 0 && last.length > 0 && idno.length > 0
   const enabledSecondStep = steps === 1 && email.length > 0 && phoneNumber.length > 0 && dob.length > 0
   const enabledThirdStep = steps === 2 && purpose.length > 0
@@ -78,7 +82,14 @@ export default function Home() {
             <>
               {checkList.map((item) => (
                 <div key={item} className='mb-6 flex items-center'>
-                  <input onChange={handleCheck} type="checkbox" className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500' id="html" name="purpose" value={item}/>
+                  <input
+                    type="checkbox"
+                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500'
+                    id={item}
+                    name="purpose"
+                    onChange={handleCheck}
+                    value={item}
+                  />
                   <label className='ml-2 text-sm font-medium text-gray-900' htmlFor={item}>{item}</label>
                 </div>
               ))}
@@ -100,7 +111,7 @@ export default function Home() {
       </form>
       {
         steps === 3 && (
-          <code className="whitespace-normal text-sm lg:max-w-xl px-4 w-full">
+          <code data-testid='code' className="whitespace-normal text-sm lg:max-w-xl px-4 w-full">
             {
               JSON.stringify(
                 {
